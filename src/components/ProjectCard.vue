@@ -28,6 +28,11 @@ export default {
 
 div.card{
     width: 15rem;
+
+    div.card-body{        
+        color: black;
+        padding: 1rem;
+    }
 }
 
 </style>
