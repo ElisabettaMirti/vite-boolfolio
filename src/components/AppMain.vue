@@ -39,7 +39,7 @@ export default {
 
 <template>
     <div class="container">
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex">
             <ProjectCard class="col-3" v-for="project in projects" :project="project"/>
         </div>
     </div>
@@ -48,5 +48,6 @@ export default {
 <style>
 div.row{
     flex-direction: row;
+    justify-content: center;
 }
 </style>

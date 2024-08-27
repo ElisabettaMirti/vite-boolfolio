@@ -1,8 +1,23 @@
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
     data(){
         return {
-
+            navLinks : [
+                {
+                    label: "Home",
+                    name: "home",
+                },
+                {
+                    label: "Project List",
+                    name: "projects",
+                },
+                {
+                    label: "About",
+                    name: "about"
+                }               
+            ]
         }
     }
 }
@@ -12,15 +27,11 @@ export default {
 <template>
 <header>
     <nav class="navbar-nav">
-        <ul>
-            <li>
-                Home
-            </li>
-            <li>
-                Project List
-            </li>
-            <li>
-                About
+        <ul class="nav">
+            <li v-for="navItem in navLinks">
+                <router-link :to="{ name: navItem.name }">
+                    {{ navItem.label }}
+                </router-link>
             </li>
         </ul>
     </nav>
@@ -35,15 +46,21 @@ header{
     margin-bottom: 2rem;
 }
 
-ul{
+ul.nav{
     list-style-type: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 
     li{
         padding: 1rem;
-        margin-top: 1rem;
+
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
     }
 }
 
