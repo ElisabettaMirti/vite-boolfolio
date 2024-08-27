@@ -38,15 +38,15 @@ export default {
 </script>
 
 <template>
-    <div class="container-fluid">
-        <div class="row d-flex">
-            <div class="col-3">
-                <ProjectCard v-for="project in projects" :project="project"/>
-            </div>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <ProjectCard class="col-3" v-for="project in projects" :project="project"/>
         </div>
     </div>
 </template>
 
 <style>
-
+div.row{
+    flex-direction: row;
+}
 </style>
